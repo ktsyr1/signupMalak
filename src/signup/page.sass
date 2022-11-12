@@ -12,14 +12,42 @@
 $colorBG: var(--colorBG)
 $colorUI: var(--colorUI)
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap')
+
+body ,*
+    margin: 0
+    padding: 0
+.box
+    display: flex
+.none
+    display: none !important
+.col
+    flex-direction: column
+.row
+    flex-direction: row
+.grid
+    flex-wrap: wrap
+.center
+    &-item
+        align-items: center
+    &-text
+        text-align: center
+    &-j
+        justify-content: center
+.space
+    justify-content: space-between
+.bor
+    border-radius: 10px
 .contenar
-    width: 544px
+    // width: 544px
+    max-width: 500px
     background: var(--colorBG) 0% 0% no-repeat padding-box
     border: 1px solid #888888
     opacity: 1
     margin: 10px auto
     padding: 20px 18px
     border-radius: 10px
+    user-select: none
+    // height: 400px
 .logo-text
     color: var(--colorUI)
 .textUi
@@ -42,7 +70,7 @@ input
     padding: 10px
     margin-bottom: 10px
 .boxForm
-    max-width: 278px
+    max-width: 260px
     p
         padding: 10px 0 4px 0px
         font-size: 12px
@@ -60,3 +88,75 @@ input
 .i2
     input
         width: 40%
+span
+    font-size: 12px
+form
+    height: 290px
+    input:invalid
+        border-color: red
+
+    input:focus:invalid:required
+        background-color: #ffdada
+
+    input:valid:invalid
+        border-color: #8888888F
+    input:out-of-range
+        background-color: orangered
+    &.paymonet
+        .input-list
+            border: 1px solid #8888888F
+
+            padding: 10px
+            font-size: 12px
+            border-radius: 5px
+        .list
+            border-radius: 10px
+            border: 1px solid #8888888F
+            font-size: 12px
+            list-style: none
+            margin: 10px 0
+            padding: 10px
+            position: absolute
+            width: 240px
+            background-color: #fff
+            // li
+
+    .showPass
+        position: absolute
+        padding: 8px
+        margin-left: -40px
+        width: 20px
+.timeline
+    width: 130px
+    border-radius: 10px
+    border: 1px solid #ddd
+    height: 5px
+    margin-right: 50px
+    >div
+        border-radius: 10px
+        background-color: #ff6c18
+        height: 5px
+@media (min-width: 300px) and (max-width: 500px)
+    .contenar
+        width: 260px
+
+@media   (max-width: 500px)
+    .timeline ,.img-info
+        display: none
+.img-info
+    width: 150px
+    height: min-content
+    margin: auto
+    padding: 50px
+.img-cardPay
+    width: 260px
+    height: auto
+    margin: 20px auto
+.dane
+    display: flex
+    justify-content: center
+    align-content: center
+    align-items: center
+    height: 200px
+    width: -webkit-fill-available
+    color: #ff6c18
